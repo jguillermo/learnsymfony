@@ -15,7 +15,7 @@ class Employee
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="string", length=50)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="UUID")
      */
