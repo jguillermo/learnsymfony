@@ -43,10 +43,9 @@ class Employee
     private $password;
 
     /**
-     * @var Person
-     *
-     * @OneToOne(targetEntity="Person")
-     * @JoinColumn(name="person_id", referencedColumnName="id")
+     * One Product has One Shipping.
+     * @ORM\OneToOne(targetEntity="Person")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
      */
     private $person;
 
