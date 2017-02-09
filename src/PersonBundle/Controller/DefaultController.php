@@ -25,7 +25,7 @@ class DefaultController extends Controller
         $em->persist($person);
 
         $em->flush();
-        
+
         return new JsonResponse([
             'api' => [
                 'url'     => 'hola',

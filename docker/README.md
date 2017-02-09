@@ -22,5 +22,10 @@ $ ./scripts/tasks.composer.sh install
 $ ./scripts/tasks.composer.sh update
 ```
 
+```bash
+./docker/scripts/tasks.console.sh doctrine:schema:update --force
+```
+
+
 ## Open
 http://localhost:8081/
