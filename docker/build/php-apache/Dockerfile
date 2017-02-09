@@ -4,6 +4,7 @@ MAINTAINER Jose Guillermo <jguillermo@outlook.com>
 RUN apt-get update \
  && apt-get install -y git zlib1g-dev \
  && docker-php-ext-install zip \
+ && docker-php-ext-install pdo_mysql \
  && a2enmod rewrite \
  && curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer

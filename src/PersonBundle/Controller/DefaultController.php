@@ -20,25 +20,15 @@ class DefaultController extends Controller
             ->setLastName('guillermo')
             ->setSecondLastName('inche');
 
-        $personId = $person->getId();
-
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($person);
 
-        $personId2 = $person->getId();
-
         $em->flush();
-
-
-        $personId3 = $person->getId();
-
+        
         return new JsonResponse([
             'api' => [
                 'url'     => 'hola',
-                'pid1'=>$personId,
-                'pid2'=>$personId2,
-                'pid3'=>$personId3,
             ]
         ]);
     }
