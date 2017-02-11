@@ -42,7 +42,7 @@ class PersonsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $personRepo = $em->getRepository("PersonBundle:Person");
 
-        $persons = $personRepo->fin();
+        $persons = $personRepo->find('123');
 
         $view = [];
 

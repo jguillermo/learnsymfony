@@ -32,5 +32,3 @@ ENV APP_DIR=/var/www/html
 ENV COMPOSER_HOME=$APP_DIR/docker/.composer
 WORKDIR $APP_DIR
 ENTRYPOINT ["/root/entrypoint.sh"]
-
-

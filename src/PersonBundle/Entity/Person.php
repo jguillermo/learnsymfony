@@ -15,7 +15,7 @@ class Person
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="string", length=50)
+     * @ORM\Column(name="id", type="string", length=36)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="UUID")
      */
