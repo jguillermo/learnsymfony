@@ -52,27 +52,9 @@ class Employee
 
 
     /**
-     * @return Person
-     */
-    public function getPerson()
-    {
-        return $this->person;
-    }
-
-    /**
-     * @param Person $person
-     * @return Employee
-     */
-    public function setPerson($person)
-    {
-        $this->person = $person;
-        return $this;
-    }
-
-    /**
      * Get id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -96,7 +78,7 @@ class Employee
     /**
      * Get role
      *
-     * @return int
+     * @return integer
      */
     public function getRole()
     {
@@ -150,5 +132,28 @@ class Employee
     {
         return $this->password;
     }
-}
 
+    /**
+     * Set person
+     *
+     * @param \PersonBundle\Entity\Person $person
+     *
+     * @return Employee
+     */
+    public function setPerson(\PersonBundle\Entity\Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return \PersonBundle\Entity\Person
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
+}
