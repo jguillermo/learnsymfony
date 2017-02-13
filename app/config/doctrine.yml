@@ -48,13 +48,14 @@ doctrine:
 #                log_enabled: true
 
             mappings:
-                persons:
+                PersonsBundle:
+                    is_bundle: false
                     mapping: true
                     type: annotation
-                    dir:  '%kernel.root_dir%/../src/Persons/Domain/Entity'
+                    dir:  "%kernel.root_dir%/../src/Persons/Domain/Entity"
                     prefix: Persons\Domain\Entity
-                    alias: Persons
-                    is_bundle: false
+                    alias: "PersonsBundle"
+
 
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"

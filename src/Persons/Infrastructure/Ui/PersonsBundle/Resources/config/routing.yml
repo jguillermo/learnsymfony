@@ -1,0 +1,6 @@
+products:
+   type: rest
+   path: /persons
+   resource: '@PersonsBundle/Controller/DefaultController.php'
+   requirements:
+      productId: \d+
