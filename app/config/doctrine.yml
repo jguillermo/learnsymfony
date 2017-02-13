@@ -47,13 +47,13 @@ doctrine:
 #                enabled:  true
 #                log_enabled: true
 
-            mappings:
-                payments:
-                    type: annotation
-                    dir:  '%kernel.root_dir%/../src/Core/Payments/Domain/Model'
-                    prefix: Aptitus\Payments\Domain\Model
-                    alias: Payments
-                    is_bundle: false
+#            mappings:
+#                payments:
+#                    type: annotation
+#                    dir:  '%kernel.root_dir%/../src/Core/Payments/Domain/Model'
+#                    prefix: Aptitus\Payments\Domain\Model
+#                    alias: Payments
+#                    is_bundle: false
 
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"
