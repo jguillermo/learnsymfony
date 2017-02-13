@@ -8,7 +8,6 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
-        schema_filter: /^(?!dbversion)/ # No tiene clave primaria
         mapping_types:
           enum: string
           set: string
@@ -24,29 +23,29 @@ doctrine:
 
     orm:
             auto_generate_proxy_classes: "%kernel.debug%"
-            auto_mapping: false
+            auto_mapping: true
             naming_strategy: doctrine.orm.naming_strategy.underscore
-            metadata_cache_driver:
-                type: memcache
-                host: "%memcached_host%"
-                port: "%memcached_port%"
-                instance_class: Memcached
-                class: Doctrine\Common\Cache\MemcacheCache
-            query_cache_driver:
-                type: memcache
-                host: "%memcached_host%"
-                port: "%memcached_port%"
-                instance_class: Memcached
-                class: Doctrine\Common\Cache\MemcacheCache
-            result_cache_driver:
-                type: memcache
-                host: "%memcached_host%"
-                port: "%memcached_port%"
-                instance_class: Memcached
-                class: Doctrine\Common\Cache\MemcacheCache
-            second_level_cache:
-                enabled:  true
-                log_enabled: true
+#            metadata_cache_driver:
+#                type: memcache
+#                host: "%memcached_host%"
+#                port: "%memcached_port%"
+#                instance_class: Memcached
+#                class: Doctrine\Common\Cache\MemcacheCache
+#            query_cache_driver:
+#                type: memcache
+#                host: "%memcached_host%"
+#                port: "%memcached_port%"
+#                instance_class: Memcached
+#                class: Doctrine\Common\Cache\MemcacheCache
+#            result_cache_driver:
+#                type: memcache
+#                host: "%memcached_host%"
+#                port: "%memcached_port%"
+#                instance_class: Memcached
+#                class: Doctrine\Common\Cache\MemcacheCache
+#            second_level_cache:
+#                enabled:  true
+#                log_enabled: true
 
             mappings:
                 payments:
@@ -55,3 +54,9 @@ doctrine:
                     prefix: Aptitus\Payments\Domain\Model
                     alias: Payments
                     is_bundle: false
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: App\Migrations
+    table_name: migration_versions
+    name: Application Migrations

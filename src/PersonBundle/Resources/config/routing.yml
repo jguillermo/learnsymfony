@@ -1,7 +1,0 @@
-## Products REST
-products:
-    type: rest
-    path: /persons
-    resource: '@PersonBundle/Controller/PersonsController.php'
-    requirements:
-       personId: \d+
