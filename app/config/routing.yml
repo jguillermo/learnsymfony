@@ -1,8 +1,4 @@
-#person:
-#    type:     rest
-#    prefix:   /
-#    resource: "@PersonBundle/Resources/config/routing.yml"
-
-app:
-    resource: "@AppBundle/Controller/"
+persons:
+    resource: "@PersonsBundle/Controller/"
     type:     annotation
+    prefix:   /
