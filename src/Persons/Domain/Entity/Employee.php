@@ -13,26 +13,46 @@ use Doctrine\ORM\Mapping as ORM;
 class Employee
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="string", length=36)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="role", type="smallint")
+     */
+    private $role;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="user", type="string", length=50)
      */
-    private $name;
+    private $user;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50)
+     */
+    private $password;
+
+    /**
+     * One Product has One Shipping.
+     * @ORM\OneToOne(targetEntity="Person")
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
+     */
+    private $person;
 
     /**
      * Get id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -40,27 +60,98 @@ class Employee
     }
 
     /**
-     * Set name
+     * Set role
      *
-     * @param string $name
+     * @param integer $role
      *
      * @return Employee
      */
-    public function setName($name)
+    public function setRole($role)
     {
-        $this->name = $name;
+        $this->role = $role;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get role
+     *
+     * @return integer
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set user
+     *
+     * @param string $user
+     *
+     * @return Employee
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
      *
      * @return string
      */
-    public function getName()
+    public function getUser()
     {
-        return $this->name;
+        return $this->user;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return Employee
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set person
+     *
+     * @param Person $person
+     *
+     * @return Employee
+     */
+    public function setPerson(Person $person = null)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return Person
+     */
+    public function getPerson()
+    {
+        return $this->person;
     }
 }
-
