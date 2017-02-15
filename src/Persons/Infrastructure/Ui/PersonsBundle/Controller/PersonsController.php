@@ -10,6 +10,7 @@ class PersonsController extends Controller
 
     public function getPersonsAction()
     {
+
         return new JsonResponse([
             'data' => []
         ]);
