@@ -1,4 +1,4 @@
 persons:
-    resource: "@PersonsBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    type:     rest
+    prefix:   "%version_api%person"
+    resource: "@PersonsBundle/Resources/config/routing.yml"
