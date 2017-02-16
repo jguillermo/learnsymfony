@@ -2,3 +2,9 @@ services:
 #    persons.example:
 #        class: Persons\Infrastructure\Ui\PersonsBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    persons.person.list.srv:
+        class: Persons\Domain\Services\Person\ListService
+        arguments: ["@persons.person.rep"]
+    persons.person.rep:
+        class: Persons\Infrastructure\Persistence\Db\PersonDbRepository
+        arguments: ["@doctrine.orm.default_entity_manager", 'Persons\Domain\Entity\Person']

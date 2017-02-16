@@ -23,8 +23,8 @@ class PersonDbRepository extends DoctrineRepository  implements PersonRepository
 
     private function getAllQuery($filter)
     {
-        $qbd = $this->repository->createQueryBuilder('pt')
-            ->select('pt');
+        $qbd = $this->repository->createQueryBuilder('p')
+            ->select('p');
 
         if(!empty($filter['limit'])) {
             $qbd->setMaxResults($filter['limit']);

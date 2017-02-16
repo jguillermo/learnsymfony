@@ -10,9 +10,12 @@ class PersonsController extends Controller
 
     public function getPersonsAction()
     {
+        $personListSrv = $this->get("persons.person.list.srv");
 
         return new JsonResponse([
-            'data' => []
+            'data' => $personListSrv->getAll([
+                'limit'=>10
+            ]),
         ]);
     }
 }
