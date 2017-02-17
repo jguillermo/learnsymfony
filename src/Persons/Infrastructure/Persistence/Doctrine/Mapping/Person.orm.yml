@@ -1,0 +1,20 @@
+Persons\Domain\Entity\Person:
+    type: entity
+    table: person
+    id:
+        id:
+            type: string
+            id: true
+            generator:
+                strategy: UUID
+    fields:
+        name:
+            type: string
+            length: '50'
+        lastName:
+            type: string
+            length: '50'
+        secondLastName:
+            type: string
+            length: '50'
+    lifecycleCallbacks: {  }

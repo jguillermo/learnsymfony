@@ -1,0 +1,26 @@
+Persons\Domain\Entity\Employee:
+    type: entity
+    table: employee
+    id:
+        id:
+            type: string
+            id: true
+            generator:
+                strategy: UUID
+    fields:
+        role:
+            type: smallint
+        user:
+            type: string
+            length: '50'
+        password:
+            type: string
+            length: '50'
+    oneToOne:
+        person:
+            targetEntity: Person
+            fetch: LAZY
+            joinColumns:
+                person_id:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }

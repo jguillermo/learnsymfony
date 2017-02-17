@@ -6,7 +6,7 @@
  * @author Jose Guillermo <jguillermo@outlook.com>
  * @copyright (c) 2017, Orbis
  */
-namespace Persons\Infrastructure\Persistence\Db;
+namespace Persons\Infrastructure\Persistence\Doctrine;
 
 use Common\Adapter\Persistence\Doctrine\DoctrineRepository;
 use Persons\Domain\Repository\PersonRepository;

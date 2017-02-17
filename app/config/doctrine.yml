@@ -51,8 +51,8 @@ doctrine:
                 PersonsBundle:
                     is_bundle: false
                     mapping: true
-                    type: annotation
-                    dir:  "%kernel.root_dir%/../src/Persons/Domain/Entity"
+                    type: yml
+                    dir:  "%kernel.root_dir%/../src/Persons/Infrastructure/Persistence/Doctrine/Mapping"
                     prefix: Persons\Domain\Entity
                     alias: "PersonsBundle"
 

@@ -2,57 +2,42 @@
 
 namespace Persons\Domain\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Employee
- *
- * @ORM\Table(name="employee")
- * @ORM\Entity
  */
 class Employee
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="id", type="string", length=36)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="UUID")
+     * @var int
      */
     private $id;
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="role", type="smallint")
      */
     private $role;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=50)
      */
     private $user;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=50)
      */
     private $password;
 
     /**
-     * One Product has One Shipping.
-     * @ORM\OneToOne(targetEntity="Person")
-     * @ORM\JoinColumn(name="person_id", referencedColumnName="id")
+     * @var Person
      */
     private $person;
+
+
 
     /**
      * Get id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -76,7 +61,7 @@ class Employee
     /**
      * Get role
      *
-     * @return integer
+     * @return int
      */
     public function getRole()
     {
@@ -132,26 +117,23 @@ class Employee
     }
 
     /**
-     * Set person
-     *
-     * @param Person $person
-     *
-     * @return Employee
-     */
-    public function setPerson(Person $person = null)
-    {
-        $this->person = $person;
-
-        return $this;
-    }
-
-    /**
-     * Get person
-     *
      * @return Person
      */
     public function getPerson()
     {
         return $this->person;
     }
+
+    /**
+     * @param Person $person
+     * @return Employee
+     */
+    public function setPerson($person)
+    {
+        $this->person = $person;
+        return $this;
+    }
+
+
 }
+

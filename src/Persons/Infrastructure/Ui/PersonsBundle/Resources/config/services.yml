@@ -6,5 +6,5 @@ services:
         class: Persons\Domain\Services\Person\ListService
         arguments: ["@persons.person.rep"]
     persons.person.rep:
-        class: Persons\Infrastructure\Persistence\Db\PersonDbRepository
+        class: Persons\Infrastructure\Persistence\Doctrine\PersonDbRepository
         arguments: ["@doctrine.orm.default_entity_manager", 'Persons\Domain\Entity\Person']

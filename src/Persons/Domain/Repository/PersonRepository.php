@@ -10,9 +10,4 @@ namespace Persons\Domain\Repository;
  */
 interface PersonRepository
 {
-    /**
-     * @param $filter
-     * @return array
-     */
-    public function getAll($filter);
 }

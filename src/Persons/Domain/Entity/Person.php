@@ -2,50 +2,36 @@
 
 namespace Persons\Domain\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Person
- *
- * @ORM\Table(name="person")
- * @ORM\Entity
  */
 class Person
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="id", type="string", length=36)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="UUID")
+     * @var int
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=50)
      */
     private $name;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="lastName", type="string", length=50)
      */
     private $lastName;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="secondLastName", type="string", length=50)
      */
     private $secondLastName;
+
 
     /**
      * Get id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -124,3 +110,4 @@ class Person
         return $this->secondLastName;
     }
 }
+
