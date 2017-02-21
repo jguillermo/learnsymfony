@@ -4,3 +4,4 @@ persons_person:
    resource: "@PersonsBundle/Controller/PersonsController.php"
    requirements:
         personId: '\d+'
+#        personId: '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}'

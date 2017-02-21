@@ -4,17 +4,14 @@ namespace Persons\Infrastructure\Ui\PersonsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use FOS\RestBundle\Controller\Annotations\Get;
 
 class PersonsController extends Controller
 {
 
-    /**
-     * GET Route annotation.
-     * @Get("/persons/{$personId}")
-     */
     public function getPersonAction($personId)
     {
+        $plu = $this->get('misa.personsbundle.util.inflector');
+
         $personListSrv = $this->get("persons.person.list.srv");
         return new JsonResponse([
             'data' => $personListSrv->getAll([

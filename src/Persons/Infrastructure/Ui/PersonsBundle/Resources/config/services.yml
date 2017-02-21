@@ -2,6 +2,9 @@ services:
 #    persons.example:
 #        class: Persons\Infrastructure\Ui\PersonsBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    misa.personsbundle.util.inflector:
+        class: Persons\Infrastructure\Service\MisaInflector
     persons.person.list.srv:
         class: Persons\Domain\Services\Person\ListService
         arguments: ["@persons.person.rep"]
