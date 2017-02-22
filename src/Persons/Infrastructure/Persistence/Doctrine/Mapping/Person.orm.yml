@@ -4,6 +4,7 @@ Persons\Domain\Entity\Person:
     id:
         id:
             type: string
+            length: '36'
             id: true
             generator:
                 strategy: UUID

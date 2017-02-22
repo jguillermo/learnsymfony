@@ -4,6 +4,7 @@ Persons\Domain\Entity\Employee:
     id:
         id:
             type: string
+            length: '36'
             id: true
             generator:
                 strategy: UUID
@@ -13,6 +14,7 @@ Persons\Domain\Entity\Employee:
         user:
             type: string
             length: '50'
+            unique: true
         password:
             type: string
             length: '50'
