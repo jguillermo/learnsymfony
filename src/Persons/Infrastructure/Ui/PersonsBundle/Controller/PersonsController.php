@@ -10,20 +10,16 @@ class PersonsController extends Controller
 
     public function getPersonAction($personId)
     {
-        $plu = $this->get('misa.personsbundle.util.inflector');
-
         $personListSrv = $this->get("persons.person.list.srv");
         return new JsonResponse([
-            'data' => $personListSrv->getAll([
-                'limit'=>10
-            ]),
+            'data' => $personListSrv->findById($personId),
         ]);
     }
     public function getPersonsAction()
     {
         $personListSrv = $this->get("persons.person.list.srv");
         return new JsonResponse([
-            'data' => $personListSrv->getAll([
+            'data' => $personListSrv->findAll([
                 'limit'=>10
             ]),
         ]);

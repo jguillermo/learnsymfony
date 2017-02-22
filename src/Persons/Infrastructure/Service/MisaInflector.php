@@ -17,7 +17,7 @@ class MisaInflector implements InflectorInterface
     public function pluralize($word)
     {
         $pluralize=[
-            'person'=>'persons'
+            'Person'=>'persons'
         ];
         if(isset($pluralize[$word])){
             return $pluralize[$word];

@@ -24,8 +24,13 @@ class ListService
         $this->personRepository = $personRepository;
     }
 
-    public function getAll($filter)
+    public function findAll($filter)
     {
-        return $this->personRepository->getAll($filter);
+        return $this->personRepository->findAll($filter);
+    }
+
+    public function findById($personId)
+    {
+        return $this->personRepository->findById($personId);
     }
 }

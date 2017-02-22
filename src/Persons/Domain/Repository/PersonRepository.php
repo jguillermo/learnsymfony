@@ -10,4 +10,15 @@ namespace Persons\Domain\Repository;
  */
 interface PersonRepository
 {
+    /**
+     * @param array $filter
+     * @return array
+     */
+    public function findAll($filter);
+
+    /**
+     * @param string $personId
+     * @return array
+     */
+    public function findById($personId);
 }
