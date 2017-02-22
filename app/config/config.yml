@@ -57,7 +57,7 @@ fos_rest:
     routing_loader:
         default_format: json
     service:
-        inflector: misa.personsbundle.util.inflector
+        inflector: misa.inflector.service
 #    serializer:
 #        serialize_null: false
     access_denied_listener:

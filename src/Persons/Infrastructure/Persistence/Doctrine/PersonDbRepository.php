@@ -52,7 +52,6 @@ class PersonDbRepository extends DoctrineRepository  implements PersonRepository
             $qbd->addOrderBy($filter['order']);
         }
 
-
         return $qbd->getQuery();
     }
 

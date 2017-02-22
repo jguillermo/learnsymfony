@@ -1,6 +1,11 @@
 persons_person:
    type: rest
-   path: /persons
    resource: "@PersonsBundle/Controller/PersonsController.php"
    requirements:
         personId: '%regexr_id_entity%'
+
+persons_employee:
+   type: rest
+   resource: "@PersonsBundle/Controller/EmployeesController.php"
+   requirements:
+        employeeId: '%regexr_id_entity%'

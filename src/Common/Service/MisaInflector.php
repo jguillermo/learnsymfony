@@ -6,7 +6,7 @@
  * @author Jose Guillermo <jguillermo@outlook.com>
  * @copyright (c) 2017, Orbis
  */
-namespace Persons\Infrastructure\Service;
+namespace Common\Service;
 
 use FOS\RestBundle\Inflector\InflectorInterface;
 use Doctrine\Common\Inflector\Inflector;
