@@ -2,6 +2,8 @@
 
 namespace Persons\Domain\Repository;
 
+use Persons\Domain\Entity\Employee;
+
 /**
  * EmployeeRepository
  *
@@ -10,4 +12,27 @@ namespace Persons\Domain\Repository;
  */
 interface EmployeeRepository
 {
+    /**
+     * @param $employeeId
+     * @return Employee
+     */
+    public function getById($employeeId);
+
+    /**
+     * @param $employeeId
+     * @return array
+     */
+    public function findById($employeeId);
+
+    /**
+     * @param $filter
+     * @return array
+     */
+    public function findAll($filter);
+
+    /**
+     * @param Employee $employee
+     * @return bool
+     */
+    public function persist(Employee $employee);
 }

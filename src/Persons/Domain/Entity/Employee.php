@@ -7,133 +7,48 @@ namespace Persons\Domain\Entity;
  */
 class Employee
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     private $id;
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $role;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $user;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $password;
 
-    /**
-     * @var Person
-     */
+    /** @var Person */
     private $person;
 
-
-
     /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set role
-     *
-     * @param integer $role
-     *
+     * @param $newUser
      * @return Employee
      */
-    public function setRole($role)
+    public function changeUser($newUser)
     {
-        $this->role = $role;
-
+        $this->user = $newUser;
         return $this;
     }
 
     /**
-     * Get role
-     *
-     * @return int
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * Set user
-     *
-     * @param string $user
-     *
+     * @param $newPassword
      * @return Employee
      */
-    public function setUser($user)
+    public function changePassword($newPassword)
     {
-        $this->user = $user;
-
+        $this->password = $newPassword;
         return $this;
     }
 
     /**
-     * Get user
-     *
      * @return string
      */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     *
-     * @return Employee
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
+    public function password()
     {
         return $this->password;
     }
 
-    /**
-     * @return Person
-     */
-    public function getPerson()
-    {
-        return $this->person;
-    }
-
-    /**
-     * @param Person $person
-     * @return Employee
-     */
-    public function setPerson($person)
-    {
-        $this->person = $person;
-        return $this;
-    }
-
 
 }
-
