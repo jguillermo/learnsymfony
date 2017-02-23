@@ -24,4 +24,9 @@ class EmployeesController extends Controller
             ]),
         ]);
     }
+
+    public function putEmployeeAction($employeeId)
+    {
+        
+    }
 }

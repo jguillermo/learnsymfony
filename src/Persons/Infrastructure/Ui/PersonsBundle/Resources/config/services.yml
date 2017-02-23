@@ -17,3 +17,7 @@ services:
     persons.employee.list.srv:
         class: Persons\Domain\Services\Employee\ListService
         arguments: ["@persons.employee.rep"]
+
+    persons.employee.mng.srv:
+        class: Persons\Domain\Services\Employee\MngService
+        arguments: ["@persons.employee.rep","@misa.encrypt.service","@misa.password.service"]

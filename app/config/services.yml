@@ -9,3 +9,8 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     misa.inflector.service:
         class: Common\Service\MisaInflector
+    misa.encrypt.service:
+        class: Common\Service\EncryptService
+        arguments: ['%app_secret%']
+    misa.password.service:
+        class: Common\Service\PasswordService
