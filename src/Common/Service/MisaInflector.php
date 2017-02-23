@@ -16,12 +16,12 @@ class MisaInflector implements InflectorInterface
 
     public function pluralize($word)
     {
-        $pluralize=[
-            'Person'=>'persons'
+        $pluralize = [
+            'Person' => 'persons'
         ];
-        if(isset($pluralize[$word])){
+        if (isset($pluralize[$word])) {
             return $pluralize[$word];
-        }else{
+        } else {
             return Inflector::pluralize($word);
         }
     }

@@ -20,4 +20,3 @@ class Person
     private $secondLastName;
 
 }
-

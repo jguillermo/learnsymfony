@@ -8,7 +8,6 @@
  */
 namespace Common\Exception\Repository;
 
-
 class NotFoundException extends ErrorException
 {
 

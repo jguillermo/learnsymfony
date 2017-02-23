@@ -20,7 +20,7 @@ class PersonsController extends Controller
         $personListSrv = $this->get("persons.person.list.srv");
         return new JsonResponse([
             'data' => $personListSrv->findAll([
-                'limit'=>10
+                'limit' => 10
             ]),
         ]);
     }

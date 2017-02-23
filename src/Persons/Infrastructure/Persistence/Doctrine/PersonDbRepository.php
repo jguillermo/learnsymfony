@@ -12,7 +12,7 @@ use Common\Adapter\Persistence\Doctrine\DoctrineRepository;
 use MisaCore\Domain\Base\Exception\RepNotFoundException;
 use Persons\Domain\Repository\PersonRepository;
 
-class PersonDbRepository extends DoctrineRepository  implements PersonRepository
+class PersonDbRepository extends DoctrineRepository implements PersonRepository
 {
     /**
      * {@inheritdoc}
@@ -27,8 +27,8 @@ class PersonDbRepository extends DoctrineRepository  implements PersonRepository
      */
     public function findById($personId)
     {
-        $data = $this->getAllQuery(['id'=>$personId,'limit'=>1])->getArrayResult();
-        if(count($data)==0){
+        $data = $this->getAllQuery(['id' => $personId,'limit' => 1])->getArrayResult();
+        if (count($data) == 0) {
             throw new RepNotFoundException("Person not Found");
         }
         return $data[0];
@@ -39,21 +39,19 @@ class PersonDbRepository extends DoctrineRepository  implements PersonRepository
         $qbd = $this->repository->createQueryBuilder('p')
             ->select('p');
 
-        if(!empty($filter['id'])) {
+        if (! empty($filter['id'])) {
             $qbd->where('p.id = :personId')
-                ->setParameter('personId',$filter['id']);
+                ->setParameter('personId', $filter['id']);
         }
 
-        if(!empty($filter['limit'])) {
+        if (! empty($filter['limit'])) {
             $qbd->setMaxResults($filter['limit']);
         }
 
-        if(!empty($filter['order'])) {
+        if (! empty($filter['order'])) {
             $qbd->addOrderBy($filter['order']);
         }
 
         return $qbd->getQuery();
     }
-
-
 }
