@@ -2,10 +2,11 @@
 
 namespace Persons\Infrastructure\Ui\PersonsBundle\Controller;
 
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class EmployeesController extends Controller
+class EmployeesController extends FOSRestController
 {
     public function getEmployeeAction($employeeId)
     {
