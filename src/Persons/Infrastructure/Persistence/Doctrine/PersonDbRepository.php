@@ -17,7 +17,7 @@ class PersonDbRepository extends DoctrineRepository implements PersonRepository
     /**
      * {@inheritdoc}
      */
-    public function findAll($filter)
+    public function listAll($filter)
     {
         return $this->getAllQuery($filter)->getArrayResult();
     }
@@ -25,8 +25,9 @@ class PersonDbRepository extends DoctrineRepository implements PersonRepository
     /**
      * {@inheritdoc}
      */
-    public function findById($personId)
+    public function listById($personId)
     {
+
         $data = $this->getAllQuery(['id' => $personId,'limit' => 1])->getArrayResult();
         if (count($data) == 0) {
             throw new RepNotFoundException("Person not Found");

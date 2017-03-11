@@ -12,14 +12,14 @@ class PersonsController extends Controller
     {
         $personListSrv = $this->get("persons.person.list.srv");
         return new JsonResponse([
-            'data' => $personListSrv->findById($personId),
+            'data' => $personListSrv->listById($personId),
         ]);
     }
     public function getPersonsAction()
     {
         $personListSrv = $this->get("persons.person.list.srv");
         return new JsonResponse([
-            'data' => $personListSrv->findAll([
+            'data' => $personListSrv->listAll([
                 'limit' => 10
             ]),
         ]);

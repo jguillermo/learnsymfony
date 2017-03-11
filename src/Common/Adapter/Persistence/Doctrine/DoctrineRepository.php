@@ -2,16 +2,17 @@
 
 namespace Common\Adapter\Persistence\Doctrine;
 
+
 use Doctrine\ORM\EntityManager;
 
 /**
  * Class DoctrineRepository
  *
  * @package Aptitus\Common\Adapter\Persistence\Doctrine
- * @author Andy Ecca <andy.ecca@gmail.com>
- * @copyright (c) 2016, Orbis
+ * @author jose Guillermo <jguillermo@outlook.com>
+ * @copyright (c) 2016
  */
-class DoctrineRepository
+class DoctrineRepository implements MisaRepository
 {
     protected $em;
     protected $entityName;
@@ -41,5 +42,45 @@ class DoctrineRepository
         $stmt->execute();
 
         return $stmt->fetch();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function find($id)
+    {
+        return $this->repository->find($id);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function findAll()
+    {
+        return $this->repository->findAll();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+    {
+        return $this->repository->findBy($criteria,$orderBy,$limit,$offset);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function findOneBy(array $criteria)
+    {
+        return $this->repository->findOneBy($criteria);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getClassName()
+    {
+        return $this->entityName;
     }
 }

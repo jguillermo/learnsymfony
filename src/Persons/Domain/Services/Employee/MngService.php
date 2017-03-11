@@ -42,7 +42,7 @@ class MngService
 
     public function changeUser($employeeId,$newUser,$currentPassword,$force=false)
     {
-        $employee = $this->employeeRepository->getById($employeeId);
+        $employee = $this->employeeRepository->find($employeeId);
         if(!$force){
             if(!$this->passwordService->verify($employee->password(),$currentPassword)){
                 throw new SrvErrorException("El password no coincide");

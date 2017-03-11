@@ -1,11 +1,5 @@
 <?php
-/**
- * PersonRepository Class
- *
- * @package Persons\Domain\Infrastructure\Persistence\Db
- * @author Jose Guillermo <jguillermo@outlook.com>
- * @copyright (c) 2017, Orbis
- */
+
 namespace Persons\Infrastructure\Persistence\Doctrine;
 
 use Common\Adapter\Persistence\Doctrine\DoctrineRepository;
@@ -13,13 +7,21 @@ use MisaCore\Domain\Base\Exception\RepNotFoundException;
 use Persons\Domain\Entity\Employee;
 use Persons\Domain\Repository\EmployeeRepository;
 
+/**
+ * PersonRepository Class
+ *
+ * @package Persons\Domain\Infrastructure\Persistence\Db
+ * @author Jose Guillermo <jguillermo@outlook.com>
+ * @copyright (c) 2017, Orbis
+ *
+ */
 class EmployeeDbRepository extends DoctrineRepository implements EmployeeRepository
 {
 
     /**
      * {@inheritdoc}
      */
-    public function findAll($filter)
+    public function listAll($filter)
     {
         return $this->getAllQuery($filter)->getArrayResult();
     }
@@ -27,7 +29,7 @@ class EmployeeDbRepository extends DoctrineRepository implements EmployeeReposit
     /**
      * {@inheritdoc}
      */
-    public function findById($employeeId)
+    public function listById($employeeId)
     {
         $data = $this->getAllQuery(['id' => $employeeId])->getArrayResult();
         if (count($data) == 0) {
@@ -56,14 +58,6 @@ class EmployeeDbRepository extends DoctrineRepository implements EmployeeReposit
         }
 
         return $qbd->getQuery();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getById($employeeId)
-    {
-        return $this->repository->find($employeeId);
     }
 
     /**

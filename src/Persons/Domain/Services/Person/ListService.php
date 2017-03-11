@@ -24,13 +24,13 @@ class ListService
         $this->personRepository = $personRepository;
     }
 
-    public function findAll($filter)
+    public function listAll($filter)
     {
-        return $this->personRepository->findAll($filter);
+        return $this->personRepository->listAll($filter);
     }
 
-    public function findById($personId)
+    public function listById($personId)
     {
-        return $this->personRepository->findById($personId);
+        return $this->personRepository->listById($personId);
     }
 }

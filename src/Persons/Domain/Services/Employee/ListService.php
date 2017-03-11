@@ -25,23 +25,30 @@ class ListService
         $this->employeeRepository = $employeeRepository;
     }
 
-
-    public function findAll($filter)
+    /**
+     * @param $filter
+     * @return array
+     */
+    public function listAll($filter)
     {
-        return $this->employeeRepository->findAll($filter);
+        return $this->employeeRepository->listAll($filter);
     }
 
     /**
      * @param $employeeId
      * @return Employee
      */
-    public function getById($employeeId)
+    public function find($employeeId)
     {
-        return $this->employeeRepository->getById($employeeId);
+        return $this->employeeRepository->find($employeeId);
     }
 
-    public function findById($employeeId)
+    /**
+     * @param $employeeId
+     * @return array
+     */
+    public function listById($employeeId)
     {
-        return $this->employeeRepository->findById($employeeId);
+        return $this->employeeRepository->listById($employeeId);
     }
 }

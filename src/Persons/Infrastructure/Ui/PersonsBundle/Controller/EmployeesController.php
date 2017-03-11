@@ -12,7 +12,7 @@ class EmployeesController extends FOSRestController
     {
         $employeeListSrv = $this->get("persons.employee.list.srv");
         return new JsonResponse([
-            'data' => $employeeListSrv->findById($employeeId)
+            'data' => $employeeListSrv->listById($employeeId)
         ]);
     }
 
@@ -20,7 +20,7 @@ class EmployeesController extends FOSRestController
     {
         $employeeListSrv = $this->get("persons.employee.list.srv");
         return new JsonResponse([
-            'data' => $employeeListSrv->findAll([
+            'data' => $employeeListSrv->listAll([
                 'limit' => 10
             ]),
         ]);
